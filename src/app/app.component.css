@@ -1,0 +1,91 @@
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+
+.calculator_border{
+    width: 350px;
+    height: 550px;
+    margin: auto;
+    margin-top: 50px;
+    padding: 1%;
+    border: solid black 1px;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.589);
+}
+
+
+.calculator_border .main_container{
+    width: 100%;
+    height: 20%;
+    margin-top: 3%;
+    float: center;
+    background-color: rgba(11, 180, 96, 0.479);
+    border-radius: 15px 15px 0 0;
+}
+
+.calculator_border .main_container .last_numbers{
+    width: 90%;
+    height: 15%;
+    margin-top: 5%;
+    float: left;
+    margin-left: 2%;
+    background-color: rgba(75, 223, 174, 0);
+    padding-left: 2%;
+    font-size: 1em;
+    border: 1px;
+    color: white;
+    outline: 0;
+}
+
+.calculator_border .main_container .get_numbers{
+    width: 90%;
+    height: 15%;
+    margin-top: 0;
+    background-color: rgba(75, 223, 174, 0);
+    padding: 5%;
+    font-size: 3em;
+    border: 1px;
+    outline: 0;
+    color: whitesmoke;
+}
+
+table{
+    margin-top: 5%;
+    width: 300px;
+}
+table{
+    width: 100%;
+}
+table tr{
+    color: white;
+    text-align: center;
+    outline: 0;
+}
+
+tr td{
+    width: auto;
+    height: auto;
+    float: center;
+    outline: 0;
+}
+button{
+    border: 0px;
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    font-size: 2em;
+    outline: 0;
+}
+
+.numbers{
+    background-color: rgb(136, 155, 123);
+}
+.simbols{
+    background-color: rgb(216, 174, 37);
+}
+.special{
+    background-color: rgb(123, 231, 52);
+}

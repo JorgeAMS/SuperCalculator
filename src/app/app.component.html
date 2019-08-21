@@ -1,0 +1,46 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="my_body">
+  
+  <div class="calculator_border">
+    <div class="main_container">
+        <input type="string" [value]="past_number" class="last_numbers" disabled>
+        <input type="float" [value]="actual_number" class="get_numbers" autofocus onclick="cero_validation()">
+    </div>
+    <table>
+      <tr>
+        <td><button class="special" (click)="clean()">C</button></td>
+        <td><button class="simbols" (click)="alternative()">+/-</button></td>
+        <td><button class="simbols" (click)="percentage()">%</button></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><button class="numbers" (click)="seven()">7</button></td>
+        <td><button class="numbers" (click)="eight()">8</button></td>
+        <td><button class="numbers" (click)="nine()">9</button></td>
+        <td><button class="simbols" (click)="divisor()">÷</button></td>
+      </tr>
+      <tr>
+        <td><button class="numbers" (click)="four()">4</button></td>
+        <td><button class="numbers" (click)="five()">5</button></td>
+        <td><button class="numbers" (click)="six()">6</button></td>
+        <td><button class="simbols" (click)="times()">x</button></td>
+      </tr>
+      <tr>
+        <td><button class="numbers" (click)="one()">1</button></td>
+        <td><button class="numbers" (click)="two()">2</button></td>
+        <td><button class="numbers" (click)="three()">3</button></td>
+        <td><button class="simbols" (click)="minus()">-</button></td>
+      </tr>
+      <tr>
+        <td><button class="numbers" (click)="cero()">0</button></td>
+        <td><button class="numbers" (click)="dot()">.</button></td>
+        <td><button class="special" (click)="equals()">=</button></td>
+        <td><button class="simbols" (click)="plus()">+</button></td>
+      </tr>
+    </table>
+    
+  </div>
+
+</div>
+
+<router-outlet></router-outlet>
