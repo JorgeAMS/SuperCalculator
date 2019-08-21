@@ -22,8 +22,12 @@ export class AppComponent {
 
   //Here we code
   cero_validation(){
-    if (this.actual_number.charAt(0)=="0" && !this.actual_number.endsWith(".")){
+    if (this.actual_number=="0" && !this.actual_number.endsWith(".")){
       this.actual_number="";
+    }
+    if(this.past_number.endsWith("=")){
+      this.actual_number="";
+      this.past_number="";
     }
   }
 
@@ -59,7 +63,6 @@ export class AppComponent {
     //(b/100)*a
     this.have_entered_ecuations();
     //this.cero_validation_symbols();
-
     if(this.contains_symbols){
       this.past_number=this.past_number+this.actual_number;
       this.number1=this.past_number.split("%");
@@ -73,6 +76,21 @@ export class AppComponent {
     }
 
 
+  }
+
+  module(){
+    this.have_entered_ecuations();
+
+    if(this.contains_symbols){
+      this.past_number=this.past_number+this.actual_number;
+      this.past_number=eval(this.past_number)+"MOD";
+      this.actual_number="0";
+      this.contains_symbols=false;
+    }
+    else{
+      this.past_number=this.actual_number+"MOD";
+      this.actual_number="0";
+    } 
   }
 
   divisor(){
@@ -138,7 +156,7 @@ export class AppComponent {
     }
     else{
       {
-        if(this.past_number.search("=")==-1 && !this.past_number.endsWith("%")){
+        if(this.past_number.search("=")==-1 && !this.past_number.endsWith("%") && !this.past_number.endsWith("MOD")){
           this.past_number=this.past_number+this.actual_number;
           this.actual_number=eval(this.past_number);
           this.past_number=this.past_number+"=";
@@ -148,6 +166,13 @@ export class AppComponent {
           this.past_number=this.past_number+this.actual_number;
           this.actual_number=eval(this.actual_number+"/"+100+"*"+this.number1[0]);
           this.past_number=this.past_number+"=";
+        }
+        if (this.past_number.endsWith("MOD")){
+          this.number1=this.past_number.split("MOD");
+          this.past_number=this.past_number+this.actual_number;
+          this.actual_number=eval(this.number1[0]+"%"+this.actual_number);
+          this.past_number=this.past_number+"=";
+          //alert(parseInt(this.number1[0])%2);
         }
       }
     }
